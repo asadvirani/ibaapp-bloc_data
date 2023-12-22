@@ -45,7 +45,7 @@ class _UserPageState extends State<UserPage> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
-        title: const Column(
+        title: Column(
           children: [
             Row(
               children: <Widget>[
@@ -57,8 +57,16 @@ class _UserPageState extends State<UserPage> {
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text("Monday"),
-                Text("17 Nov"),
+                // Text("Monday"),
+                // Text("17 Nov"),
+                Text(
+                    DateFormat('EEEE').format(
+                        DateTime.now()), // Display current day (e.g., Monday)
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                Text(
+                    DateFormat('dd MMM').format(
+                        DateTime.now()), // Display current date (e.g., 17 Nov)
+                    style: TextStyle(fontSize: 16)),
               ],
             )
           ],
